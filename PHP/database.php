@@ -11,7 +11,7 @@
 
     // Alterar Registros
     function DBUpdate($table, array $data, $where = null){
-        foreach ($data as $key => value){
+        foreach ($data as $key => $value){
             $fields[] = "{$key} = '{$value}'";
         }
         
@@ -36,7 +36,7 @@
         if(!mysqli_num_rows($result)){
             return false;
         }else{
-            foreach($data as $key => $value){
+            foreach($data /*ou $result (Não commitado)*/  as $key => $value){
                 echo "<table>
                     <tr>
                         <th>
