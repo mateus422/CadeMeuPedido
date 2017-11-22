@@ -4,22 +4,22 @@
     require 'database.php';
     $link = DBconnect();
 
-    $cod_pedido = $_GET["codigo"];
+    $cod_pedido = $_GET['codigo'];
 
     //Mostrar o pedido a partir do código
+   $teste = DBRead('t_pedido', null, 'nome_pedido, valor_pedido, cod_cliente, cod_pedido');
+$table= "t_pedido";
+        
+        echo "<h2>Lista de pedidos:</h2><br><br>";
+        foreach($teste as $key){
+            if($key['cod_pedido'] == $cod_pedido){
+                 echo "ID: ".$key['cod_pedido'].'<br>';
+                 echo "Nome do pedido: ".$key['nome_pedido'].'<br>';
+                 echo "Valor do pedido: ".$key['valor_pedido'].'<br>';
+            } else {
+                echo "Código incompatível";
+            }
+   }
     
-    $query = sprintf("SELECT P.nome_pedido, P.valor_pedido, E.cod_entregador FROM T_PEDIDO P, T_ENTREGADOR E WHERE P.cod_pedido=$cod_pedido, P.cod_entregador = E.cod_entregador");
-    //Passar o id do entregador para a variável
-    $cod_entregador = sprintf("SELECT E.cod_entregador FROM T_PEDIDO P, T_ENTREGADOR E  WHERE P.cod_entregador = E.cod_entregador");
-    $consulta =  DBExecute($query);
-
-    if ($consulta) {
-    	//Mostrar o entregador a partir de seu código
-    	$entregador = sprintf("SELECT nome FROM T_ENTREGADOR  WHERE E.cod_entregador = $cod_entregador");
-    	DBExecute($entregador);
-    } else {
-    	echo 'Código incompatível';
-    }
-
    DBClose($link);
 ?>
