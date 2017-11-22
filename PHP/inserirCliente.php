@@ -7,7 +7,7 @@ $nomeCliente = $_GET['NomeCliente'];
 $numeroCliente = $_GET['NumeroCliente'];
 $enderecoCliente = $_GET['EnderecoCliente']; 
 
-/*Falta ver o nome correto no banco de dados;*/ $table= "table-cliente";
+/*Falta ver o nome correto no banco de dados;*/ $table= "T_cliente";
 
     $dadosCliente = array (
         /*Falta ver o nome correto no banco de dados;*/ 'nome' => "$nomeCliente",
@@ -16,7 +16,7 @@ $enderecoCliente = $_GET['EnderecoCliente'];
         );
     
     //Função gravar(Ailla)
-    $gravar = DBCreate ('cliente', $dadosCliente);
+    $gravar = DBCreate ($table, $dadosCliente);
     if($gravar){
         echo "Dados inseridos!";
     } else{
