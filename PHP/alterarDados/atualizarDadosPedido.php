@@ -4,16 +4,18 @@
         </head>
     
     <body>
-    
         
 <?php
-    require '..\PHP\config.php';
-    require '..\PHP\connection.php';
-    require '..\PHP\database.php';
+     require '..\config.php';
+    require '..\connection.php';
+    require '..\database.php';
 
+    $link = DBconnect();    
+        
     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
-    $teste = DBRead('tabledeteste');
-                
+    $teste = DBRead('T_pedido');
+    $table= "T_pedido";
+            
          /*  echo "<table>
                     <tr>
                         <th>Nome</th>
@@ -43,12 +45,36 @@
              
    }*/
 ?>
-    <form method="Get" action="#">
-         <label>Nome do cliente: <input type="text" name="NomeCliente"></label><br>
-            <label>Numero do cliente: <input type="number" name="NumeroCliente"></label><br>
-            <label>Endereço do cliente: <input type="text" name="EnderecoCliente"></label><br>
+
+<form method="get" action="#">
+          <label>ID do Pedido a ser modificado: <input type="number" name="CodPedido"></label><br><br>   
+        <label>Novo nome do pedido: <input type="text" name="NNomePedido"></label><br>
+            <label>Novo valor do pedido: <input type="number" name="NValorPedido"></label><br>
             <input type="submit" value="Enviar">
-        </form>
-    
+            </form>
+<?php
+        
+$nnomePedido = $_GET['NNomePedido']; 
+$nvalorPedido = $_GET['NValorPedido'];
+
+$codPedido = $_GET['CodPedido'];
+        
+$dadosNPedido = array (
+        
+        'nome_pedido' => "$nnomePedido",
+        'valor_pedido' => "$nvalorPedido"
+        );
+        
+          $update = DBUpdate($table,$dadosNPedido,"cod_pedido = $codPedido");
+            if($update){
+                echo "Dados modificados com sucesso!";
+            }else{
+                echo "Tivemos problemas em modificar os dados";
+            }
+        
+       DBClose($link); 
+        ?>        
+        
+        
         </body>
     </html>

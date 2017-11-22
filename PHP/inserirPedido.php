@@ -1,7 +1,11 @@
 <?php
+   
+
     require '..\PHP\config.php';
     require '..\PHP\connection.php';
     require '..\PHP\database.php';
+
+    $link = DBconnect();
 
 $nomePedido = $_GET['NomePedido']; 
 $valorPedido = $_GET['ValorPedido']; 
@@ -23,4 +27,5 @@ $valorPedido = $_GET['ValorPedido'];
         echo "Erro na inserção de dados!";
     }
 
+DBClose($link);
 ?>
