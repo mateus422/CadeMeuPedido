@@ -57,7 +57,6 @@
                             
         $where = ($where) ? " WHERE {$where}" : null;
         $query = "DELETE FROM {$table}{$where}";
-        var_dump($query);
         return DBExecute($query);
         } 
     

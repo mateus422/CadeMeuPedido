@@ -28,14 +28,24 @@
         
 ?>
     <br><br><br>
-        <h3>Modifique pedidos aqui:</h3>
+        <h3>Delete seus pedidos aqui:</h3>
         <form method="get" action="#">
-          <label>ID do Pedido a ser modificado: <input type="number" name="CodPedido"></label><br><br>   
-        <label>Novo nome do pedido: <input type="text" name="NNomePedido"></label><br>
-            <label>Novo valor do pedido: <input type="number" name="NValorPedido"></label><br>
-            <input type="submit" value="Modificar">
+          <label>ID do Pedido a ser deletado: <input type="number" name="CodPedido"></label><br><br>   
+            <input type="submit" value="Deletar">
             </form>
         
+<?php 
+
+                $codPedido = $_GET['CodPedido'];
+                  
+                $delete = DBDelete('T_pedido', "cod_pedido = $codPedido");
+ 
+                if($delete)
+                    echo "OK";
+                else
+                    echo "Deu ruuim";
+
+
         DBClose($link); 
     ?>  
     </body>

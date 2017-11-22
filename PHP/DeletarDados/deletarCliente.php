@@ -27,10 +27,10 @@
         
 		?>
     		<br><br><br>
-        	<h3>Modifique clientes aqui:</h3>
+        	<h3>Delete clientes aqui:</h3>
         	<form method="get" action="#">
-            	<label>ID do cliente a ser modificado: <input type="number" name="CodCliente"></label><br><br>
-            	<input type="submit" value="Modificar">
+            	<label>ID do cliente a ser deletado: <input type="number" name="CodCliente"></label><br><br>
+            	<input type="submit" value="Deletar">
         	</form>
 
         	<?php 

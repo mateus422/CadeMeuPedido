@@ -18,23 +18,34 @@
     $teste = DBRead('T_entregador');
     $table= "T_entregador";
         
-        echo "<h2>Lista de entregadores:</h2><br><br>";
+      echo "<h2>Lista de pedidos:</h2><br><br>";
         foreach($teste as $key){
              echo "ID: ".$key['cod_entregador'].'<br>';
-             echo "Nome: ".$key['nome'].'<br>';
-             echo "Descrição: ".$key['descricao'].'<br><hr>';
+             echo "Nome do entregador: ".$key['nome'].'<br>';
+             echo "Descrição: ".$key['descricao'].'<br>';
+             echo "Cod_pedido: ".$key['cod_pedido'].'<br>';
+             echo "Cod_entregador: ".$key['cod_entregador'].'<br><hr>';
              
    }
-        
 ?>
     <br><br><br>
-        <h3>Modifique entregadores aqui:</h3>
+        <h3>Delete entregadores aqui:</h3>
         <form method="get" action="#">
-            <label>ID do entregador a ser modificado: <input type="number" name="CodEntregador"></label><br><br>
-            <label>Novo nome do entregador: <input type="text" name="NNomeEntregador"></label><br>
-            <label>Nova Descrição do entregador: <input type="text" name="NDescricaoEntregador"></label><br>
-            <input type="submit" value="Modificar">
+            <label>ID do entregador a ser deletado: <input type="number" name="CodEntregador"></label><br><br>
+            <input type="submit" value="Deletar">
             </form> 
+
+            <?php 
+
+      			$codEntregador = $_GET['CodEntregador'];
+      			  
+        		$delete = DBDelete('T_entregador', "cod_entregador = $codEntregador");
+ 
+        		if($delete)
+        			echo "OK";
+        		else
+       				echo "Deu ruuim";
+
         
 
        DBClose($link); 
