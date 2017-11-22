@@ -16,7 +16,7 @@ $enderecoCliente = $_GET['EnderecoCliente'];
         );
     
     //Função gravar(Ailla)
-    $gravar = DBCreate ('cliente, $dadosCliente');
+    $gravar = DBCreate ('cliente', $dadosCliente);
     if($gravar){
         echo "Dados inseridos!";
     } else{

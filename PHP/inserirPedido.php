@@ -15,7 +15,7 @@ $valorPedido = $_GET['ValorPedido'];
         );
         
     //Função gravar(Ailla)
-    $gravar = DBCreate ('pedido, $dadosPedido');
+    $gravar = DBCreate ('pedido', $dadosPedido);
     if($gravar){
         echo "Dados inseridos!";
     } else{
