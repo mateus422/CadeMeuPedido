@@ -16,42 +16,24 @@
     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
     $teste = DBRead('T_cliente');
     $table= "T_cliente";
-            
-         /*  echo "<table>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Numero</th>
-                        <th>Endereço</th>
-                        <th>Data</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                        </tr>";
-
+        echo "<h2>Lista de clientes:</h2><br><br>";
         foreach($teste as $key){
-             echo "
-         
-                        <tr>
-                            <td>$key[Nome]</td>
-                            <td>$key[Numero]</td>
-                            <td>$key[endereco]</td>
-                            <td>$key[data]</td>
-                            <td> <form method='get'>
-                                <label><input type='button'>Update</label></td>
-                            <td>
-                                 <label><input type='button'>Delete</label></td>
-                                </form><td>
-                        </tr>
-                
-                </table>";
-             
-   }*/
+             echo "ID: ".$key['cod_cliente'].'<br>';
+             echo "Nome: ".$key['nome'].'<br>';
+             echo "Numero: ".$key['numero'].'<br>';
+             echo "Endereço: ".$key['endereço'].'<br>';
+             echo "Cod_pedido: ".$key['cod_pedido'].'<br><hr>';
+   }
+        
 ?>
-    <form method="get" action="#">
+    <br><br><br>
+        <h3>Modifique clientes aqui:</h3>
+        <form method="get" action="#">
             <label>ID do cliente a ser modificado: <input type="number" name="CodCliente"></label><br><br>
             <label>Novo nome do cliente: <input type="text" name="NNomeCliente"></label><br><br>
             <label>novo numero do cliente: <input type="number" name="NNumeroCliente"></label><br><br>
             <label>Novo endereço do cliente: <input type="text" name="NEnderecoCliente"></label><br><br>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Modificar">
         </form>
     
 <?php 

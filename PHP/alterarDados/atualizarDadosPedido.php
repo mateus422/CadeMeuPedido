@@ -15,42 +15,25 @@
     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
     $teste = DBRead('T_pedido');
     $table= "T_pedido";
-            
-         /*  echo "<table>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Numero</th>
-                        <th>Endereço</th>
-                        <th>Data</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                        </tr>";
-
+        
+        echo "<h2>Lista de pedidos:</h2><br><br>";
         foreach($teste as $key){
-             echo "
-         
-                        <tr>
-                            <td>$key[Nome]</td>
-                            <td>$key[Numero]</td>
-                            <td>$key[endereco]</td>
-                            <td>$key[data]</td>
-                            <td> <form method='get'>
-                                <label><input type='button'>Update</label></td>
-                            <td>
-                                 <label><input type='button'>Delete</label></td>
-                                </form><td>
-                        </tr>
-                
-                </table>";
+             echo "ID: ".$key['cod_pedido'].'<br>';
+             echo "Nome do pedido: ".$key['nome_pedido'].'<br>';
+             echo "Valor do pedido: ".$key['valor_pedido'].'<br>';
+             echo "Cod_cliente: ".$key['cod_cliente'].'<br>';
+             echo "Cod_entregador: ".$key['cod_entregador'].'<br><hr>';
              
-   }*/
+   }
+        
 ?>
-
-<form method="get" action="#">
+    <br><br><br>
+        <h3>Modifique pedidos aqui:</h3>
+        <form method="get" action="#">
           <label>ID do Pedido a ser modificado: <input type="number" name="CodPedido"></label><br><br>   
         <label>Novo nome do pedido: <input type="text" name="NNomePedido"></label><br>
             <label>Novo valor do pedido: <input type="number" name="NValorPedido"></label><br>
-            <input type="submit" value="Enviar">
+            <input type="submit" value="Modificar">
             </form>
 <?php
         

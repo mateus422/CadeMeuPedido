@@ -13,45 +13,26 @@
     $link = DBconnect();    
     
         
-    //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
+     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
     $teste = DBRead('T_entregador');
-    $table = "T_entregador";
-            
-         /*  echo "<table>
-                    <tr>
-                        <th>Nome</th>
-                        <th>Numero</th>
-                        <th>Endereço</th>
-                        <th>Data</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                        </tr>";
-
-        foreach($teste as $key){
-             echo "
-         
-                        <tr>
-                            <td>$key[Nome]</td>
-                            <td>$key[Numero]</td>
-                            <td>$key[endereco]</td>
-                            <td>$key[data]</td>
-                            <td> <form method='get'>
-                                <label><input type='button'>Update</label></td>
-                            <td>
-                                 <label><input type='button'>Delete</label></td>
-                                </form><td>
-                        </tr>
-                
-                </table>";
-             
-   }*/
-?>
+    $table= "T_entregador";
         
+        echo "<h2>Lista de entregadores:</h2><br><br>";
+        foreach($teste as $key){
+             echo "ID: ".$key['cod_entregador'].'<br>';
+             echo "Nome: ".$key['nome'].'<br>';
+             echo "Descrição: ".$key['descricao'].'<br><hr>';
+             
+   }
+        
+?>
+    <br><br><br>
+        <h3>Modifique entregadores aqui:</h3>
         <form method="get" action="#">
             <label>ID do entregador a ser modificado: <input type="number" name="CodEntregador"></label><br><br>
             <label>Novo nome do entregador: <input type="text" name="NNomeEntregador"></label><br>
-            <label>Nova Descricao do entregador: <input type="text" name="NDescricaoEntregador"></label><br>
-            <input type="submit" value="Enviar">
+            <label>Nova Descrição do entregador: <input type="text" name="NDescricaoEntregador"></label><br>
+            <input type="submit" value="Modificar">
             </form> 
         
 <?php

@@ -2,7 +2,8 @@
 	require '..\PHP\config.php';
     require '..\PHP\connection.php';
     require '..\PHP\database.php';
-   
+    $link = DBconnect();
+
     $cod_pedido = $_GET["codigo"];
 
     //Mostrar o pedido a partir do código
@@ -18,5 +19,6 @@
     } else {
     	echo 'Código incompatível';
     }
-   
+
+   DBClose($link);
 ?>
