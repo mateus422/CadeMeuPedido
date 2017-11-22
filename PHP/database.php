@@ -1,5 +1,17 @@
 <?php
  
+    // Grava Registros
+    function DBCreate($table, array $data){
+        $data = DBEscape($data);
+        
+        $fields = implode(', ', array_keys($data));
+        $values = "'".implode("', '", $data);
+        
+        $query = "INSERT INTO {$table} ({$fields}) VALUES ({$values})";
+        return DBExecute($query);
+        
+    }
+    
     // Executa as Querys
     function DBExecute($query){
         $link = DBConnect();
@@ -36,22 +48,14 @@
         if(!mysqli_num_rows($result)){
             return false;
         }else{
-            foreach($data /*ou $result (Não commitado)*/  as $key => $value){
-                echo "<table>
-                    <tr>
-                        <th>
-                            $key
-                            </th>
-                        </tr>
-                        <tr>
-                        <td>
-                            $values
-                            </td>
-                        </tr>
-                
-                </table>";
+            
+            while($res = mysqli_fetch_assoc($result)){
+                $data[] = $res;
             }
+        
         }
-    }
+            return $data;
+     }
+    
 
 ?>

@@ -14,9 +14,15 @@ $valorPedido = $_GET['ValorPedido'];
         /*Falta ver o nome correto no banco de dados;*/ 'valor-pedido' => "$valorPedido"
         );
         
-    //Função gravar(Ailla)
+      DBCreate($table, $dadosClientes);
 
-    //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
-    DBRead($table, $params = null, $fields = '*');
+        
+      $gravar = DBCreate($table, $dadosPedido);
+
+    if($gravar){
+        echo "Tudo certo!";
+    }else{
+        echo "algo deu Errado!";
+    }
 
 ?>

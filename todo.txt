@@ -1,0 +1,3 @@
+- Fazer a alteração de cada tabela
+- Fazer alterarClientes
+
