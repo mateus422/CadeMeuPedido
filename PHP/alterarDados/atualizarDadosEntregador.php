@@ -27,12 +27,18 @@
         
 ?>
     <br><br><br>
-        <h3>Modifique entregadores aqui:</h3>
+        
         <form method="get" action="#">
-            <label>ID do entregador a ser modificado: <input type="number" name="CodEntregador"></label><br><br>
-            <label>Novo nome do entregador: <input type="text" name="NNomeEntregador"></label><br>
-            <label>Nova Descrição do entregador: <input type="text" name="NDescricaoEntregador"></label><br>
+            <fieldset>
+            <legend>Modifique entregadores aqui</legend>
+            <label>ID do entregador a ser modificado: </label><br>
+            <input type="number" name="CodEntregador "><br>
+            <label>Novo nome do entregador: </label><br>
+            <input type="text" name="NNomeEntregador"><br>
+            <label>Nova Descrição do entregador: </label><br>
+            <input type="text" name="NDescricaoEntregador"><br>
             <input type="submit" value="Modificar">
+            </fieldset>
             </form> 
         
 <?php

@@ -27,13 +27,20 @@
         
 ?>
     <br><br><br>
-        <h3>Modifique clientes aqui:</h3>
+        
         <form method="get" action="#">
-            <label>ID do cliente a ser modificado: <input type="number" name="CodCliente"></label><br><br>
-            <label>Novo nome do cliente: <input type="text" name="NNomeCliente"></label><br><br>
-            <label>novo numero do cliente: <input type="number" name="NNumeroCliente"></label><br><br>
-            <label>Novo endereço do cliente: <input type="text" name="NEnderecoCliente"></label><br><br>
+        <fieldset>
+        <legend>Modifique clientes aqui</legend>
+            <label>ID do cliente a ser modificado: </label><br>
+            <input type="number" name="CodCliente"><br>
+            <label>Novo nome do cliente: </label><br>
+            <input type="text" name="NNomeCliente"><br>
+            <label>novo numero do cliente: </label><br>
+            <input type="number" name="NNumeroCliente"><br>
+            <label>Novo endereço do cliente: </label><br>
+            <input type="text" name="NEnderecoCliente"><br>
             <input type="submit" value="Modificar">
+             </fieldset>
         </form>
     
 <?php 
