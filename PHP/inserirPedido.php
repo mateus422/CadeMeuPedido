@@ -1,5 +1,5 @@
 <?php
-echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='stylesheet' href='..\Html e CSS\cadastro.css' type='text/css'></head><body><div>";
+echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='stylesheet' href='../HtmleCSS/cadastro.css' type='text/css'></head><body><div>";
     require '..\PHP\config.php';
     require '..\PHP\connection.php';
     require '..\PHP\database.php';
@@ -30,7 +30,7 @@ if(!$erro){
         echo "Erro na inserção de dados!";
     }
 } else{
-    echo "<button class='button' onClick=location.href='..\Html e CSS\CadastrarPedido.html'><span>Voltar ao início</span></button></div></body></html>";
+    echo "<button class='button' onClick=location.href='../HtmleCSS/cadastrarPedido.html'><span>Voltar ao início</span></button></div></body></html>";
 }
 DBClose($link);
 ?>
