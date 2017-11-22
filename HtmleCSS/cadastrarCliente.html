@@ -7,10 +7,16 @@
         
         <h2>Dados dos clientes</h2>
         <form method="post" action="..\PHP\inserirCliente.php">
-            <label>Nome do cliente: <input type="text" name="NomeCliente"></label><br>
-            <label>Numero do cliente: <input type="number" name="NumeroCliente"></label><br>
-            <label>Endereço do cliente: <input type="text" name="EnderecoCliente"></label><br>
-            <input type="submit" value="Enviar">
+        <fieldset>
+                <legend>Cadastro cliente</legend>
+                    <label >Nome do cliente:</label><br>
+                    <input type="text" name="NomeCliente" size="60" maxlength="255" placeholder="Nome completo"><br>
+                    <label>Numero do cliente:</label><br> 
+                    <input type="number" name="NumeroCliente" size=14 maxlength="11" placeholder="(ddd)x-xxxx-xxxx"><br>
+                    <label>Endereço do cliente: </label><br> 
+                    <input type="text" name="EnderecoCliente" size="60" maxlength="500" placeholder="EX.: Cidade, Bairro, Rua, Numero"><br><br>
+                    <input type="submit" value="Enviar">
+                </fieldset>
             </form>   
         </body>
     

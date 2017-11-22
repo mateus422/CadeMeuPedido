@@ -7,9 +7,14 @@
         
          <h2>Dados dos Pedidos</h2>
         <form method="post" action="..\PHP\inserirPedido.php">
-            <label>Nome do pedido: <input type="text" name="NomePedido"></label><br>
-            <label>Valor do pedido: <input type="number" name="ValorPedido"></label><br>
+        <fieldset>
+            <legend>Cadastro cliente</legend>
+            <label>Nome do pedido: </label><br>
+            <input type="text" name="NomePedido" size="60" maxlength="255" placeholder="Nome completo"><br><br>
+            <label>Valor do pedido: </label><br>
+            <input type="number" name="ValorPedido" placeholder="Ex.:25,00"><br><br>
             <input type="submit" value="Enviar">
+            </fieldset>
             </form>
          
     </body>

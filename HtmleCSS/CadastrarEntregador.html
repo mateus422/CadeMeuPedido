@@ -7,9 +7,15 @@
         
         <h2>Dados do entregador</h2>
         <form method="post" action="..\PHP\inserirEntregador.php">
-            <label>Nome do entregador: <input type="text" name="NomeEntregador"></label><br>
-            <label>Descricao do entregador: <input type="text" name="DescricaoEntregador"></label><br>
-            <input type="submit" value="Enviar">
+            <fieldset>
+            <legend>Cadastro entregador</legend>
+
+                <label>Nome do entregador:</label><br>
+                 <input type="text" name="NomeEntregador" size="60" maxlength="255" placeholder="Nome completo"><br><br>
+                <label>Descricao do entregador:</label><br>
+                 <input type="text" name="DescricaoEntregador" size="60" maxlength="255" placeholder="Fale sobre"><br><br>
+                <input type="submit" value="Enviar">
+            </fieldset>
             </form>   
         </body>
     
