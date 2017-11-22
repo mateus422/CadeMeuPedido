@@ -31,8 +31,9 @@
 
         return DBExecute($query);
     }
-    //FUNÇÃO PODERÁ SER USADA PARA O UPDATE
-    // Ler registros
+    
+    // Podemos usa-lá tambem na parte da Ellen
+    // Ler registros 
     function DBRead($table, $params = null, $fields = '*'){
         $params = ($params) ? "{$params}" : null;
         
