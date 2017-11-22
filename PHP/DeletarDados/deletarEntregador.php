@@ -1,7 +1,7 @@
 <html>
     
     <head>
-    
+    <link rel='stylesheet' href='../HtmleCSS/cadastro.css' type='text/css'>
     </head>
     
     <body>
@@ -42,9 +42,9 @@
         		$delete = DBDelete('T_entregador', "cod_entregador = $codEntregador");
  
         		if($delete)
-        			echo "OK";
+        			echo "Deletado com Sucesso";
         		else
-       				echo "Deu ruuim";
+       				echo "Falha ao Deletar";
 
         
 

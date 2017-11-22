@@ -41,9 +41,9 @@
                 $delete = DBDelete('T_pedido', "cod_pedido = $codPedido");
  
                 if($delete)
-                    echo "OK";
+                    echo "Deletado com Sucesso";
                 else
-                    echo "Deu ruuim";
+                    echo "Falha ao Deletar";
 
 
         DBClose($link); 

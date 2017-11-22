@@ -40,9 +40,9 @@
         		$delete = DBDelete('T_cliente', "cod_cliente = $codCliente");
  
         		if($delete)
-        			echo "OK";
+        			echo "Deletado com Sucesso";
         		else
-       				echo "Deu ruuim";
+       				echo "Falha ao Deletar";
 
 
        			DBClose($link); 
