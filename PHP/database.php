@@ -35,8 +35,14 @@
         
         return DBExecute($query);
     }
+    //Gravar Registros
+    function DBCreate ($table, array $data){
+        $fields = implode(', ', array_keys($data));
+        $values = "'".implode("', '", $data)."'";
+        $query = "INSERT INTO {$table} ({$fields}) VALUES ({$values}) ";
 
-    
+        return DBExecute($query);
+    }
     //FUNÇÃO PODERÁ SER USADA PARA O UPDATE
     // Ler registros
     function DBRead($table, $params = null, $fields = '*'){
@@ -54,8 +60,12 @@
             }
         
         }
+<<<<<<< HEAD
             return $data;
      }
     
 
+=======
+    }
+>>>>>>> 1d9eb31fb607853ec349deb23b1054483919eb80
 ?>
