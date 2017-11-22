@@ -15,7 +15,12 @@ $valorPedido = $_GET['ValorPedido'];
         );
         
     //Função gravar(Ailla)
-
+    $gravar = DBCreate ('pedido, $dadosPedido');
+    if($gravar){
+        echo "Dados inseridos!";
+    } else{
+        echo "Erro na inserção de dados!";
+    }
     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
     DBRead($table, $params = null, $fields = '*');
 
