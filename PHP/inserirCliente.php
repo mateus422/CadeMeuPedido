@@ -12,12 +12,9 @@ $enderecoCliente = $_GET['EnderecoCliente'];
     $dadosCliente = array (
         /*Falta ver o nome correto no banco de dados;*/ 'nome' => "$nomeCliente",
         /*Falta ver o nome correto no banco de dados;*/ 'numero' => "$numeroCliente",
-        /*Falta ver o nome correto no banco de dados;*/ 'endereco' => "$enderecoCliente"
+        /*Falta ver o nome correto no banco de dados;*/ 'endereço' => "$enderecoCliente"
         );
-<<<<<<< HEAD
 
-      $gravar = DBCreate($table, $dadosCliente);
-=======
     
     //Função gravar(Ailla)
     $gravar = DBCreate ($table, $dadosCliente);
@@ -25,14 +22,5 @@ $enderecoCliente = $_GET['EnderecoCliente'];
         echo "Dados inseridos!";
     } else{
         echo "Erro na inserção de dados!";
-    }
-    //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
-    DBRead($table, $params = null, $fields = '*');
->>>>>>> 1d9eb31fb607853ec349deb23b1054483919eb80
-
-    if($gravar){
-        echo "Tudo certo!";
-    }else{
-        echo "algo deu Errado!";
     }
 ?>

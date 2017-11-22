@@ -7,8 +7,8 @@ $nomeEntregador = $_GET["NomeEntregador"];
 $descricaoEntregador = $_GET["DescricaoEntregador"];
 $table = "T_entregador";
 $dadosEntregador= array(
-'nome'=> '$nomeEntregador',
-'descricao'=> '$descricaoEntregador'
+'nome'=> "$nomeEntregador",
+'descricao'=> "$descricaoEntregador"
 );
 $gravar = DBCreate ($table, $dadosPedido);
     if($gravar){

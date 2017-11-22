@@ -1,17 +1,5 @@
 <?php
  
-    // Grava Registros
-    function DBCreate($table, array $data){
-        $data = DBEscape($data);
-        
-        $fields = implode(', ', array_keys($data));
-        $values = "'".implode("', '", $data);
-        
-        $query = "INSERT INTO {$table} ({$fields}) VALUES ({$values})";
-        return DBExecute($query);
-        
-    }
-    
     // Executa as Querys
     function DBExecute($query){
         $link = DBConnect();
@@ -60,12 +48,8 @@
             }
         
         }
-<<<<<<< HEAD
+
             return $data;
      }
     
-
-=======
-    }
->>>>>>> 1d9eb31fb607853ec349deb23b1054483919eb80
 ?>
