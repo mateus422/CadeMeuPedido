@@ -8,6 +8,7 @@ echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='st
 
 $nomeEntregador = $_POST["NomeEntregador"];
 $descricaoEntregador = $_POST["DescricaoEntregador"];
+$erro=false;
 
 $table = "T_entregador";
 if (empty($nomeEntregador)){//Verifica se o nome está preenchido

@@ -15,7 +15,7 @@ if (empty($nomeCliente)){//Verifica se o nome do cliente está preenchido
     echo "Por favor preencha o nome do cliente corretamente!<br>";
     $erro=true;
 }    
-if (empty($numeroCliente) || is_numeric($numeroCliente)) {//Verifica se o numero do cliente está preenchido e se é um numero
+if (empty($numeroCliente)) {//Verifica se o numero do cliente está preenchido e se é um numero
     echo "Por favor preencha o número do cliente corretamente!<br>";
     $erro=true;
 }

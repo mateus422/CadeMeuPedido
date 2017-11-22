@@ -8,13 +8,14 @@ echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='st
 
 $nomePedido = $_POST['NomePedido']; 
 $valorPedido = $_POST['ValorPedido']; 
+$erro=false;
 
 /*Falta ver o nome correto no banco de dados;*/ $table= "T_pedido";
 if (empty($nomePedido)){//Verifica se o nome está preenchido
     echo "Por favor preencha o nome do pedido corretamente!<br>";
     $erro=true;
 }    
-if (empty($valorPedido) || !is_numeric($valorPedido)) {//Verifica se o valor foi preenchido e se é um numero
+if (empty($valorPedido)) {//Verifica se o valor foi preenchido e se é um numero
     echo "Por favor preencha o valor do pedido corretamente!<br>";
     $erro=true;
 }
