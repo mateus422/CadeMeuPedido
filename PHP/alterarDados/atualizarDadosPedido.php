@@ -28,12 +28,18 @@
         
 ?>
     <br><br><br>
-        <h3>Modifique pedidos aqui:</h3>
+       
         <form method="get" action="#">
-          <label>ID do Pedido a ser modificado: <input type="number" name="CodPedido"></label><br><br>   
-        <label>Novo nome do pedido: <input type="text" name="NNomePedido"></label><br>
-            <label>Novo valor do pedido: <input type="number" name="NValorPedido"></label><br>
+        <fieldset>
+        <legend>Modifique pedidos aqui</legend>
+          <label>ID do Pedido a ser modificado: </label><br>
+          <input type="number" name="CodPedido"><br>  
+        <label>Novo nome do pedido: </label><br>
+        <input type="text" name="NNomePedido"> <br> 
+            <label>Novo valor do pedido:</label><br>
+             <input type="number" name="NValorPedido"><br>
             <input type="submit" value="Modificar">
+            </fieldset>
             </form>
 <?php
         
