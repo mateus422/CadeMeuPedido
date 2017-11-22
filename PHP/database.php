@@ -52,5 +52,13 @@
 
             return $data;
      }
+
+        function DBDelete($table, $where = null){
+                            
+        $where = ($where) ? " WHERE {$where}" : null;
+        $query = "DELETE FROM {$table}{$where}";
+        var_dump($query);
+        return DBExecute($query);
+        } 
     
 ?>
