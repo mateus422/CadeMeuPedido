@@ -16,7 +16,12 @@ $enderecoCliente = $_GET['EnderecoCliente'];
         );
     
     //Função gravar(Ailla)
-
+    $gravar = DBCreate ('cliente, $dadosCliente');
+    if($gravar){
+        echo "Dados inseridos!";
+    } else{
+        echo "Erro na inserção de dados!";
+    }
     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
     DBRead($table, $params = null, $fields = '*');
 
