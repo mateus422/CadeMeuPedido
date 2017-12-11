@@ -1,12 +1,13 @@
 <html>
-    
-    <head>
-    <link rel='stylesheet' href='../HtmleCSS/cadastro.css' type='text/css'>
-    </head>
-    
-    <body>
-        
-<?php
+
+<head>
+    <title>Deletar dados</title>
+    <link rel="stylesheet" href="../../HtmleCSS/cadastro.css">
+</head>
+
+<body>
+
+    <?php
     require '..\config.php';
     require '..\connection.php';
     require '..\database.php';
@@ -28,16 +29,18 @@
              
    }
 ?>
-    <br><br><br>
-        <h3>Delete entregadores aqui:</h3>
+        <br><br><br>
         <form method="get" action="#">
-            <label>ID do entregador a ser deletado: <input type="number" name="CodEntregador"></label><br><br>
-            <input type="submit" value="Deletar">
-            </form> 
+            <fieldset>
+                <legend>Delete entregadores aqui</legend>
+                <label>ID do entregador a ser deletado: <input type="number" name="CodEntregador"></label><br><br>
+                <input class="botao" type="submit" value="Deletar">
+            </fieldset>
+        </form>
 
-            <?php 
+        <?php 
 
-      			$codEntregador = $_GET['CodEntregador'];
+      			@$codEntregador = $_GET['CodEntregador'];
       			  
         		$delete = DBDelete('T_entregador', "cod_entregador = $codEntregador");
  
@@ -49,6 +52,7 @@
         
 
        DBClose($link); 
-        ?>        
-        </body>
-    </html>
+        ?>
+</body>
+
+</html>

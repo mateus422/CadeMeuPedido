@@ -2,6 +2,7 @@
 
 <head>
     <title>Update de dados</title>
+    <link rel="stylesheet" href="../../HtmleCSS/cadastro.css">
 
 </head>
 
@@ -41,7 +42,7 @@
                 <input type="number" name="NNumeroCliente"><br>
                 <label>Novo endereço do cliente: </label><br>
                 <input type="text" name="NEnderecoCliente"><br>
-                <input type="submit" value="Modificar">
+                <input class="botao" type="submit" value="Modificar">
             </fieldset>
         </form>
 

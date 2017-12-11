@@ -1,11 +1,13 @@
 <html>
-    <head>
-    
-        </head>
-    
-    <body>
-        
-<?php
+
+<head>
+    <title>Deletar dados</title>
+    <link rel="stylesheet" href="../../HtmleCSS/cadastro.css">
+</head>
+
+<body>
+
+    <?php
      require '..\config.php';
     require '..\connection.php';
     require '..\database.php';
@@ -27,16 +29,18 @@
    }
         
 ?>
-    <br><br><br>
-        <h3>Delete seus pedidos aqui:</h3>
+        <br><br><br>
         <form method="get" action="#">
-          <label>ID do Pedido a ser deletado: <input type="number" name="CodPedido"></label><br><br>   
-            <input type="submit" value="Deletar">
-            </form>
-        
-<?php 
+            <fieldset>
+                <legend>Delete pedidos aqui</legend>
+                <label>ID do Pedido a ser deletado: <input type="number" name="CodPedido"></label><br><br>
+                <input class="botao" type="submit" value="Deletar">
+            </fieldset>
+        </form>
 
-                $codPedido = $_GET['CodPedido'];
+        <?php 
+
+                @$codPedido = $_GET['CodPedido'];
                   
                 $delete = DBDelete('T_pedido', "cod_pedido = $codPedido");
  
@@ -45,8 +49,8 @@
                 else
                     echo "Falha ao Deletar";
 
-
         DBClose($link); 
-    ?>  
-    </body>
+    ?>
+</body>
+
 </html>

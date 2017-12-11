@@ -2,6 +2,7 @@
 
 <head>
     <title>Update de dados</title>
+    <link rel="stylesheet" href="../../HtmleCSS/cadastro.css">
     
 </head>
 
@@ -40,7 +41,7 @@
                 <input type="text" name="NNomePedido"> <br>
                 <label>Novo valor do pedido:</label><br>
                 <input type="number" name="NValorPedido"><br>
-                <input type="submit" value="Modificar">
+                <input class="botao" type="submit" value="Modificar">
             </fieldset>
         </form>
         <?php
