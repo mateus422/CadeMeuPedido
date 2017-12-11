@@ -46,10 +46,10 @@
         </form>
 
         <?php 
-      $codCliente = $_GET['CodCliente'];
-      $nnomeCliente = $_GET['NNomeCliente'];
-      $nnumeroCliente = $_GET['NNumeroCliente'];
-      $nenderecoCliente = $_GET['NEnderecoCliente'];   
+      @$codCliente = $_GET['CodCliente'];
+      @$nnomeCliente = $_GET['NNomeCliente'];
+      @$nnumeroCliente = $_GET['NNumeroCliente'];
+      @$nenderecoCliente = $_GET['NEnderecoCliente'];   
         
         
         $dadosNCliente = array (

@@ -44,10 +44,10 @@
         </form>
 
         <?php
-$nnomeEntregador = $_GET["NNomeEntregador"];
-$ndescricaoEntregador = $_GET["NDescricaoEntregador"];
+@$nnomeEntregador = $_GET["NNomeEntregador"];
+@$ndescricaoEntregador = $_GET["NDescricaoEntregador"];
 
-$codEntregador = $_GET["CodEntregador"];
+@$codEntregador = $_GET["CodEntregador"];
         
 $dadosNEntregador= array(
 'nome' => "$nnomeEntregador",

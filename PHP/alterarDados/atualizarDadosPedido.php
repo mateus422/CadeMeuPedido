@@ -45,10 +45,10 @@
         </form>
         <?php
         
-$nnomePedido = $_GET['NNomePedido']; 
-$nvalorPedido = $_GET['NValorPedido'];
+@$nnomePedido = $_GET['NNomePedido']; 
+@$nvalorPedido = $_GET['NValorPedido'];
 
-$codPedido = $_GET['CodPedido'];
+@$codPedido = $_GET['CodPedido'];
         
 $dadosNPedido = array (
         
