@@ -1,12 +1,14 @@
-<html>
-    <head>
-    
-        </head>
-    
-    <body>
-    
-        
-<?php
+<html lang="pt-br">
+
+<head>
+    <title>Update de dados</title>
+
+</head>
+
+<body>
+
+
+    <?php
     require '..\config.php';
     require '..\connection.php';
     require '..\database.php';
@@ -26,24 +28,24 @@
    }
         
 ?>
-    <br><br><br>
-        
+        <br><br><br>
+
         <form method="get" action="#">
-        <fieldset>
-        <legend>Modifique clientes aqui</legend>
-            <label>ID do cliente a ser modificado: </label><br>
-            <input type="number" name="CodCliente"><br>
-            <label>Novo nome do cliente: </label><br>
-            <input type="text" name="NNomeCliente"><br>
-            <label>novo numero do cliente: </label><br>
-            <input type="number" name="NNumeroCliente"><br>
-            <label>Novo endereço do cliente: </label><br>
-            <input type="text" name="NEnderecoCliente"><br>
-            <input type="submit" value="Modificar">
-             </fieldset>
+            <fieldset>
+                <legend>Modifique clientes aqui</legend>
+                <label>ID do cliente a ser modificado: </label><br>
+                <input type="number" name="CodCliente"><br>
+                <label>Novo nome do cliente: </label><br>
+                <input type="text" name="NNomeCliente"><br>
+                <label>novo numero do cliente: </label><br>
+                <input type="number" name="NNumeroCliente"><br>
+                <label>Novo endereço do cliente: </label><br>
+                <input type="text" name="NEnderecoCliente"><br>
+                <input type="submit" value="Modificar">
+            </fieldset>
         </form>
-    
-<?php 
+
+        <?php 
       $codCliente = $_GET['CodCliente'];
       $nnomeCliente = $_GET['NNomeCliente'];
       $nnumeroCliente = $_GET['NNumeroCliente'];
@@ -64,8 +66,9 @@
             }
         
        DBClose($link); 
-        ?>        
-        
-        
-        </body>
-    </html>
+        ?>
+
+
+</body>
+
+</html>

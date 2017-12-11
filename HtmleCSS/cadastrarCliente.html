@@ -1,23 +1,26 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        </head>
-    
-    <body>
-        
-        <h2>Dados dos clientes</h2>
-        <form method="post" action="..\PHP\inserirCliente.php">
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Cadastrar cliente</title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+
+    <h2>Dados dos clientes</h2>
+    <form method="post" action="..\PHP\inserirCliente.php">
         <fieldset>
-                <legend>Cadastro cliente</legend>
-                    <label >Nome do cliente:</label><br>
-                    <input type="text" name="NomeCliente" size="60" maxlength="255" placeholder="Nome completo"><br>
-                    <label>Numero do cliente:</label><br> 
-                    <input type="number" name="NumeroCliente" size=14 maxlength="11" placeholder="(ddd)x-xxxx-xxxx"><br>
-                    <label>Endereço do cliente: </label><br> 
-                    <input type="text" name="EnderecoCliente" size="60" maxlength="500" placeholder="EX.: Cidade, Bairro, Rua, Numero"><br><br>
-                    <input type="submit" value="Enviar">
-                </fieldset>
-            </form>   
-        </body>
-    
-    </html>
+            <legend>Cadastro cliente</legend>
+            <label>Nome do cliente:</label><br>
+            <input type="text" name="NomeCliente" size="60" maxlength="255" placeholder="Nome completo"><br>
+            <label>Numero do cliente:</label><br>
+            <input type="number" name="NumeroCliente" size=14 maxlength="11" placeholder="(ddd)x-xxxx-xxxx"><br>
+            <label>Endereço do cliente: </label><br>
+            <input type="text" name="EnderecoCliente" size="60" maxlength="500" placeholder="EX.: Cidade, Bairro, Rua, Numero"><br><br>
+            <input type="submit" value="Enviar">
+        </fieldset>
+    </form>
+</body>
+
+</html>

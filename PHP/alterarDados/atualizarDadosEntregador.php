@@ -1,12 +1,14 @@
-<html>
-    <head>
-    
-        </head>
-    
-    <body>
-        
-<?php
-     require '..\config.php';
+<html lang="pt-br">
+
+<head>
+    <title>Update de dados</title>
+
+</head>
+
+<body>
+
+    <?php
+    require '..\config.php';
     require '..\connection.php';
     require '..\database.php';
 
@@ -26,22 +28,22 @@
    }
         
 ?>
-    <br><br><br>
-        
+        <br><br><br>
+
         <form method="get" action="#">
             <fieldset>
-            <legend>Modifique entregadores aqui</legend>
-            <label>ID do entregador a ser modificado: </label><br>
-            <input type="number" name="CodEntregador "><br>
-            <label>Novo nome do entregador: </label><br>
-            <input type="text" name="NNomeEntregador"><br>
-            <label>Nova Descrição do entregador: </label><br>
-            <input type="text" name="NDescricaoEntregador"><br>
-            <input type="submit" value="Modificar">
+                <legend>Modifique entregadores aqui</legend>
+                <label>ID do entregador a ser modificado: </label><br>
+                <input type="number" name="CodEntregador "><br>
+                <label>Novo nome do entregador: </label><br>
+                <input type="text" name="NNomeEntregador"><br>
+                <label>Nova Descrição do entregador: </label><br>
+                <input type="text" name="NDescricaoEntregador"><br>
+                <input type="submit" value="Modificar">
             </fieldset>
-            </form> 
-        
-<?php
+        </form>
+
+        <?php
 $nnomeEntregador = $_GET["NNomeEntregador"];
 $ndescricaoEntregador = $_GET["NDescricaoEntregador"];
 
@@ -60,6 +62,7 @@ $dadosNEntregador= array(
             }
           
        DBClose($link); 
-        ?>        
-        </body>
-    </html>
+        ?>
+</body>
+
+</html>

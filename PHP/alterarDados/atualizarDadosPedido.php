@@ -1,12 +1,14 @@
-<html>
-    <head>
+<html lang="pt-br">
+
+<head>
+    <title>Update de dados</title>
     
-        </head>
-    
-    <body>
-        
-<?php
-     require '..\config.php';
+</head>
+
+<body>
+
+    <?php
+    require '..\config.php';
     require '..\connection.php';
     require '..\database.php';
 
@@ -27,21 +29,21 @@
    }
         
 ?>
-    <br><br><br>
-       
+        <br><br><br>
+
         <form method="get" action="#">
-        <fieldset>
-        <legend>Modifique pedidos aqui</legend>
-          <label>ID do Pedido a ser modificado: </label><br>
-          <input type="number" name="CodPedido"><br>  
-        <label>Novo nome do pedido: </label><br>
-        <input type="text" name="NNomePedido"> <br> 
-            <label>Novo valor do pedido:</label><br>
-             <input type="number" name="NValorPedido"><br>
-            <input type="submit" value="Modificar">
+            <fieldset>
+                <legend>Modifique pedidos aqui</legend>
+                <label>ID do Pedido a ser modificado: </label><br>
+                <input type="number" name="CodPedido"><br>
+                <label>Novo nome do pedido: </label><br>
+                <input type="text" name="NNomePedido"> <br>
+                <label>Novo valor do pedido:</label><br>
+                <input type="number" name="NValorPedido"><br>
+                <input type="submit" value="Modificar">
             </fieldset>
-            </form>
-<?php
+        </form>
+        <?php
         
 $nnomePedido = $_GET['NNomePedido']; 
 $nvalorPedido = $_GET['NValorPedido'];
@@ -62,8 +64,9 @@ $dadosNPedido = array (
             }
         
        DBClose($link); 
-        ?>        
-        
-        
-        </body>
-    </html>
+        ?>
+
+
+</body>
+
+</html>
