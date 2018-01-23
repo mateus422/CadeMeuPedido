@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+@mixin login__input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid #8A4DB2;
+    color: #828282;
+    font-size: 20px; 
+    height: 40px;
+    text-align: justify;
+    width: 450px;
+
+    &:focus{
+        outline: 0;
+    }
+}
+
+body {
+    background-image: url("../../_images/_imagemin/login--background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.cadastro {
+    background-color: #4D007F;
+    padding: 350px 220px 220px 220px;
+}
+
+.cadastro-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.cadastro-user__label {
+    color: #fff;
+    font-size: 20px;
+}
+
+.cadastro-user__label+.cadastro-user__label {
+  margin-top: 10px;
+}
+
+.cadastro-form__input--name {
+    @include login__input;
+}
+
+.cadastro-form__input--user {
+    @include login__input;
+}
+
+.cadastro-form__input--pass {
+    @include login__input;
+}
+
+
+.cadastro-form__input--cnpj {
+    @include login__input;
+}
+
+.cadastro-form__submit {
+    background-color: #6172FF;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 30px;
+    padding: 15px 0;
+    width: 450px;
+
+    &:focus{
+        outline: 0;
+    }
+}

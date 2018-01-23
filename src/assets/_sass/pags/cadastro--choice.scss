@@ -1,0 +1,55 @@
+@charset "utf-8";
+
+@mixin cadastro__btn {
+    border: none;
+    border-radius: 100px;
+    background-color: #BB6BD9;
+    color: #fff;
+    display: block;
+    font-size: 20px;
+    padding: 30px 130px;
+    margin: 0px 90px;
+    text-decoration: none;
+
+    &:focus{
+        outline: 0;
+    }
+}
+
+body {
+    background-image: url("../../_images/_imagemin/login--background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.content {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.cadastro-table {
+    background-color: #fff;
+    th {
+        height: 70px;
+        background-color: #4D007F;
+        color: #fff;
+        font-size: 20px;
+        padding-left: 30px;
+        text-align: justify !important;
+        width: 100%;
+    }
+    margin: 60% 0;
+}
+
+.cadastro__btn--first {
+    @include cadastro__btn;
+    margin-top: 65px;
+}
+
+.cadastro__btn--last {
+    @include cadastro__btn;
+    margin-top: 45px;
+    margin-bottom: 65px;
+}
