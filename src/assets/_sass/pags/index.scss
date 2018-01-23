@@ -1,5 +1,15 @@
 @charset "utf-8";
 
+@mixin btn {
+    color: #fff;
+    display: block;
+    background-color: #C1171E;
+    font-size: 20px;
+    margin-top: 15%;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;  
+}
 
 body {
     background-size: cover;
@@ -7,6 +17,11 @@ body {
     width: 100%;
     height: 100vh;
     animation: background 20s infinite;
+}
+
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .presentation {
@@ -19,29 +34,54 @@ body {
     img{
         display: block;
     }
+}
 
-    a {
-        color: #fff;
-        display: block;
-        background-color: red;
-        font-size: 20px;
-        padding: 10px 20px;
-        margin-top: 15%;
-        text-decoration: none;
+.presentation__btn {
+    @include btn;
+}
+
+.hidden {
+    display: none;
+    form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+    .presentation__btn {
+        margin-top: 5px !important; 
     }
 }
 
+.hidden__pedido {
+    font-size: 20px;
+    height: 40px;
+    width: 300px;
+    border-radius: 100px;
+    margin-top: 15%;
+    padding-left: 15px;
+}
+
+.hidden__btn {
+    @include btn;
+    margin-top: 5px !important;
+}
+
 @keyframes background{
+    
+    0% {
+        background-image: url("../../_images/_imagemin/pizza.jpg");
+    }
     25% {
-        background-image: url("../../_images/pizza.jpg");   
+        background-image: url("../../_images/_imagemin/pizza.jpg");   
     }
     50% {
-        background-image: url("../../_images/fritas.jpg");   
+        background-image: url("../../_images/_imagemin/fritas.jpg");   
     }
     75% {
-        background-image: url("../../_images/hamburger.jpg");   
+        background-image: url("../../_images/_imagemin/hamburger.jpg");   
     }
     100%{
-        background-image: url("../../_images/hamburger.jpg");   
+        background-image: url("../../_images/_imagemin/hamburger.jpg");   
     }
 }

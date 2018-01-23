@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cadê meu pedido ?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/_css/pags/index.css">
     <link rel="stylesheet" href="assets/_css/base.css">
+    <script type="text/javascript" src="assets/_javascript/main.js"></script>
 </head>
 <body>
     <header class="header-main">
@@ -19,13 +21,19 @@
                     <li><a>Veja aonde está seu pedido</a></li>
                 </ul>
             </nav>
-            <a class="header__btn" role="button" href="#">entrar ou cadastrar</a>
+            <a class="header__btn" role="button"  href="#">entrar ou cadastrar</a>
         </div>
     </header>
 
     <section class="presentation">
             <img src="assets/_images/logo.png">
-            <a class="apresentation__btn" role="button" href="#">Verifique aonde está seu pedido</a> 
+             <a class="presentation__btn" role="button" onclick="showPedido()" href="#">Verifique aonde está seu pedido</a>
+             <div id="divHidden" class="hidden">
+                 <form>
+                     <input class="hidden__pedido" type="text" placeholder="Digite seu codigo aqui">
+                     <input class="hidden__btn" type="submit" value="pesquisar">
+                 </form>
+             </div> 
     </section>
 </body>
 </html>

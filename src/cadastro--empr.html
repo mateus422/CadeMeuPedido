@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadê meu pedido ?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/_css/pags/cadastro--empr.css">
+    <link rel="stylesheet" href="assets/_css/base.css">
+    <script type="text/javascript" src="assets/_javascript/main.js"></script>
+</head>
+<body>
+    <header class="header-main">
+        <div class="content">
+                <img class="logo" src="assets/_images/logo.png" width="160px">
+            <nav class="nav-main">
+                <ul>
+                    <li><a>Quem somos</a></li> 
+                    <li><a>Cadastre seu restaurante</a></li>
+                    <li><a>Veja aonde está seu pedido</a></li>
+                </ul>
+            </nav>
+            <a class="header__btn" role="button"  href="#">entrar ou cadastrar</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="cadastro">
+            <div class="content">
+                <form class="cadastro-form" action="#" method="post">
+                    <p class="cadastro-form__title">Dados do Restaurante</p>
+                    <input type="text" name="Name" class="cadastro-form__input" placeholder="Nome do seu Restaurante" required="required">
+                    <input type="number" name="Phone" class="cadastro-form__input" placeholder="Telefone do seu Restaurante(apenas números)" required="required">
+                    <input type="number" name="CNPJ" class="cadastro-form__input" placeholder="CNPJ do seu Restaurante(apenas números)" required="required">
+                    <input type="number" name="CEP" class="cadastro-form__input" placeholder="CEP (apenas números)" required="required">
+                    <select name="Cidade" class="cadastro-form__input" placeholder="" required="required">
+                        <option value="Maceió">Maceió</option>
+                        <option value="Arapiraca">Arapiraca</option>
+                    </select>
+                    <input type="text" name="Bairro" class="cadastro-form__input" placeholder="Bairro" required="required">
+                    <input type="text" name="Endereco" class="cadastro-form__input" placeholder="Endereço do seu Restaurante" required="required">
+                    <input type="number" name="Number" class="cadastro-form__input" placeholder="Numero" required="required">
+                    <input type="text" name="Complemento" class="cadastro-form__input" placeholder="Complemento" required="required">
+
+                    <div class="form--representante">
+                        <p class="cadastro-form__title">Contato do representante legal</p>
+                        <input type="text" name="NameResponsavel" class="cadastro-form__input" placeholder="Nome do Responsavel" required="required">
+                        <input type="text" name="SobrenomeResponsavel" class="cadastro-form__input" placeholder="Sobrenome" required="required">
+                        <input type="email" name="EmailResponsavel" class="cadastro-form__input" placeholder="Celular do Responsavel (apenas números)" required="required">
+                        <input type="submit" value="ENVIAR DADOS PARA ANÁLISE" class="cadastro-form__btn">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

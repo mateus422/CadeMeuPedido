@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    animation: background 20s infinite;
+}
+
+.cadastro {
+    .content {
+        background: rgba(255, 255, 255,0.5);
+        height: 90vh;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+.cadastro-form {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;  
+    justify-content: space-around;
+    }
+    
+ .cadastro-form__title {
+     margin: 0 35%;
+     margin-bottom: 5%;
+     font-size: 25px;
+     top: 0;
+     left: 0;
+ }
+
+ .cadastro-form__input {
+    border: 1px solid #dad4d1;
+    border-radius: 5px;
+    font-size: 16px;
+    height: 40px;
+    flex-basis: 300px;
+ }
+
+ .cadastro-form__btn {
+     padding: 15px 25px;
+     background-color: #fff;
+     border: 2px solid #C1171E;
+     font-size:20px;
+     margin: 0 20%;
+     transition: 1s;
+
+     &:hover {
+         color: #fff;
+         background-color: #C1171E;
+         transition: 2s;
+     }
+ }
+
+ .form--representante {
+    .cadastro-form__title {
+        margin: 0 30%;
+        margin-bottom: 5%; 
+    }
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 15%;
+ }
+
+
+
+ 
+@keyframes background{
+    
+    0% {
+        background-image: url("../../_images/_imagemin/pizza.jpg");
+    }
+    25% {
+        background-image: url("../../_images/_imagemin/pizza.jpg");   
+    }
+    50% {
+        background-image: url("../../_images/_imagemin/fritas.jpg");   
+    }
+    75% {
+        background-image: url("../../_images/_imagemin/hamburger.jpg");   
+    }
+    100%{
+        background-image: url("../../_images/_imagemin/hamburger.jpg");   
+    }
+}
