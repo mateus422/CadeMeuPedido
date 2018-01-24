@@ -17,23 +17,24 @@
             <nav class="nav-main">
                 <ul>
                     <li><a>Quem somos</a></li> 
-                    <li><a>Cadastre seu restaurante</a></li>
-                    <li><a>Veja aonde está seu pedido</a></li>
+                    <li><a href="cadastro--empr.html">Cadastre seu restaurante</a></li>
+                    <li><a href="index.html">Veja aonde está seu pedido</a></li>
                 </ul>
             </nav>
-            <a class="header__btn" role="button"  href="#">entrar ou cadastrar</a>
+            <a class="header__btn" role="button"   href="functions--choice.html">entrar</a>
         </div>
     </header>
-
-    <section class="presentation">
-            <img src="assets/_images/logo.png">
-             <a class="presentation__btn" role="button" onclick="showPedido()" href="#">Verifique aonde está seu pedido</a>
-             <div id="divHidden" class="hidden">
-                 <form>
-                     <input class="hidden__pedido" type="text" placeholder="Digite seu codigo aqui">
-                     <input class="hidden__btn" type="submit" value="pesquisar">
-                 </form>
-             </div> 
-    </section>
+    <main>
+        <section class="presentation">
+                <img src="assets/_images/logo.png">
+                <a class="presentation__btn" role="button" onclick="showPedido()" href="#">Verifique aonde está seu pedido</a>
+                <div id="divHidden" class="hidden">
+                    <form action="assets/_php/search.php" method="get">
+                        <input class="hidden__pedido" name="codigo" type="text" placeholder="Digite seu codigo aqui">
+                        <input class="hidden__btn" type="submit" value="pesquisar">
+                    </form>
+                </div> 
+        </section>
+    </main>
 </body>
 </html>

@@ -1,17 +1,5 @@
 @charset "utf-8";
 
-@mixin btn {
-    color: #fff;
-    display: block;
-    background-color: #C1171E;
-    border-radius: 5px;
-    font-size: 20px;
-    margin-top: 15%;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;  
-}
-
 body {
     background-size: cover;
     background-repeat: no-repeat;
@@ -20,53 +8,58 @@ body {
     animation: background 20s infinite;
 }
 
-html {
-    overflow-x: hidden;
-    overflow-y: hidden;
+.functions {
+   
+    .content {
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255,0.8);
+        height: 90vh;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
-.presentation {
+.funtions__title {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+.functions-list {
     align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: center;
-    height: 90vh;
-
-    img{
-        display: block;
+    a {
+        text-decoration: none;
     }
 }
 
-.presentation__btn {
-    @include btn;
-}
-
-.hidden {
-    display: none;
-    form {
+.functions-list__item {
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    }
-    .presentation__btn {
-        margin-top: 5px !important; 
-    }
-}
-
-.hidden__pedido {
-    font-size: 20px;
-    height: 40px;
     width: 300px;
-    border-radius: 100px;
-    margin-top: 15%;
-    padding-left: 15px;
+    height: 300px;
+    background-color: #C1171E;
+    margin-top: 15px;
+    margin-left: 15px;
+
+    img {
+        height: 150px;
+        width: 150px;
+    }
 }
 
-.hidden__btn {
-    @include btn;
-    margin-top: 5px !important;
+.item__title {
+    font-size: 30px;
+    color: #fff;
+    margin-top: 10px;
 }
+
 
 @keyframes background{
     

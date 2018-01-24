@@ -21,14 +21,22 @@
     }
     li {
         display: inline-block;
+      
 
         &+li{
             padding-left: 15px;
         }
+    
     }
 
     a {
         color: #fff;
+        text-decoration: none;
+        transition: 1s;
+    }
+    a:hover {
+        color: #C1171E;
+        transition: 2s;
     }
 }
 
@@ -39,9 +47,10 @@
 .header__btn {
     float: left;
     margin-left: 40px;
+    border-radius: 5px;
     color: #fff;
     display: block;
-    background-color: red;
+    background-color: #C1171E;
     font-size: 20px;
     padding: 10px 20px;
     text-decoration: none;
