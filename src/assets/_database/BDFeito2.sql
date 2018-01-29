@@ -26,11 +26,11 @@ create Database cade_meu_pedido;
   use cade_meu_pedido;
 
 CREATE TABLE `t_cliente` (
-  `cod_cliente` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(80) NOT NULL,
-  `numero` decimal(11,0) DEFAULT NULL,
-  `endereço` varchar(255) NOT NULL,
-  PRIMARY KEY (`cod_cliente`),
+  `cli_cpf` int(11) NOT NULL,
+  `cli_nomecompleto` varchar(255) NOT NULL,
+  `cli_telefone` decimal(11,0) NOT NULL,
+  `cli_endereco` varchar(255) NOT NULL,
+  PRIMARY KEY (`cli_cpf`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -51,11 +51,12 @@ DROP TABLE IF EXISTS `t_empresa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_empresa` (
-  `cod_empresa` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_empresa` varchar(200) NOT NULL,
-  `numero_empresa` decimal(11,0) DEFAULT NULL,
-  `responsavel` varchar(200),
-  PRIMARY KEY (`cod_empresa`),
+  `emp_cnpj` int(14) NOT NULL,
+  `emp_nome` varchar(200) NOT NULL,
+  `emp_login` varchar(16) NOT NULL,
+  `emp_senha` varchar(16) NOT NULL,
+  `emp_telefone` decimal(11,0),
+  PRIMARY KEY (`emp_cnpj`),
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -76,13 +77,12 @@ DROP TABLE IF EXISTS `t_entregador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_entregador` (
-  `cod_entregador` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(80) NOT NULL,
-  `descricao` varchar(255) DEFAULT NULL,
-  `cod_empresa` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cod_entregador`),
-  KEY `cod_empresa` (`cod_empresa`),
-  CONSTRAINT `t_entregador_ibfk_1` FOREIGN KEY (`cod_empresa`) REFERENCES `t_empresa` (`cod_empresa`)
+  `ent_cpf` int(11) NOT NULL,
+  `ent_nomecompleto` varchar(255) NOT NULL,
+  `ent_telefone` decimal(11,0) NOT NULL,
+  PRIMARY KEY (`ent_cpf`),
+  KEY `emp_cnpj` (`emp_cnpj`),
+  CONSTRAINT `t_entregador_ibfk_1` FOREIGN KEY (`emp_cnpj`) REFERENCES `t_empresa` (`emp_cnpj`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -103,16 +103,17 @@ DROP TABLE IF EXISTS `t_pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_pedido` (
-  `cod_pedido` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_pedido` varchar(80) NOT NULL,
-  `valor_pedido` float NOT NULL,
-  `cod_cliente` int(11) DEFAULT NULL,
-  `cod_entregador` int(11) DEFAULT NULL,
-  PRIMARY KEY (`cod_pedido`),
-  KEY `cod_cliente` (`cod_cliente`),
-  KEY `cod_entregador` (`cod_entregador`),
-  CONSTRAINT `t_pedido_ibfk_1` FOREIGN KEY (`cod_cliente`) REFERENCES `t_cliente` (`cod_cliente`),
-  CONSTRAINT `t_pedido_ibfk_2` FOREIGN KEY (`cod_entregador`) REFERENCES `t_entregador` (`cod_entregador`)
+  `ped_codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `ped_status` boolean NOT NULL,
+  `ped_descricao` varchar(255) NOT NULL,
+  `ped_valor` float(5,2) NOT NULL,
+  `cli_cpf` int(11) DEFAULT NULL,
+  `ent_cpf` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ped_codigo`),
+  KEY `cli_cpf` (`cli_cpf`),
+  KEY `ent_cpf` (`ent_cpf`),
+  CONSTRAINT `t_pedido_ibfk_1` FOREIGN KEY (`cli_cpf`) REFERENCES `t_cliente` (`cli_cpf`),
+  CONSTRAINT `t_pedido_ibfk_2` FOREIGN KEY (`ent_cpf`) REFERENCES `t_entregador` (`ent_cpf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
