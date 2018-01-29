@@ -18,38 +18,22 @@
                 <ul>
                         <li><a>Quem somos</a></li> 
                         <li><a href="cadastro--empr.html">Cadastre seu restaurante</a></li>
-                        <li><a href="index.html">Veja aonde está seu pedido</a></li>
                 </ul>
             </nav>
-            <a class="header__btn" role="button"  href="functions--choice.html">entrar</a>
+            <a class="header__btn" role="button"  href="functions--choice.html">Entrar</a>
         </div>
     </header>
 
     <main>
         <section class="cadastro">
             <div class="content">
-                <form class="cadastro-form" action="#" method="post">
-                    <p class="cadastro-form__title">Dados do Restaurante</p>
-                    <input type="text" name="Name" class="cadastro-form__input" placeholder="Nome do seu Restaurante" required="required">
-                    <input type="number" name="Phone" class="cadastro-form__input" placeholder="Telefone do seu Restaurante(apenas números)" required="required">
-                    <input type="number" name="CNPJ" class="cadastro-form__input" placeholder="CNPJ do seu Restaurante(apenas números)" required="required">
-                    <input type="number" name="CEP" class="cadastro-form__input" placeholder="CEP (apenas números)" required="required">
-                    <select name="Cidade" class="cadastro-form__input" placeholder="" required="required">
-                        <option value="Maceió">Maceió</option>
-                        <option value="Arapiraca">Arapiraca</option>
-                    </select>
-                    <input type="text" name="Bairro" class="cadastro-form__input" placeholder="Bairro" required="required">
-                    <input type="text" name="Endereco" class="cadastro-form__input" placeholder="Endereço do seu Restaurante" required="required">
-                    <input type="number" name="Number" class="cadastro-form__input" placeholder="Numero" required="required">
-                    <input type="text" name="Complemento" class="cadastro-form__input" placeholder="Complemento" required="required">
-
-                    <div class="form--representante">
-                        <p class="cadastro-form__title">Contato do representante legal</p>
-                        <input type="text" name="NameResponsavel" class="cadastro-form__input" placeholder="Nome do Responsavel" required="required">
-                        <input type="text" name="SobrenomeResponsavel" class="cadastro-form__input" placeholder="Sobrenome" required="required">
-                        <input type="email" name="EmailResponsavel" class="cadastro-form__input" placeholder="Celular do Responsavel (apenas números)" required="required">
-                        <input type="submit" value="ENVIAR DADOS PARA ANÁLISE" class="cadastro-form__btn">
-                    </div>
+                <form class="cadastro-form" action="..\PHP\inserir-empresa.php" method="post">
+                    <p class="cadastro-form__title">Cadastro do Restaurante</p>
+                    <input type="text" name="LoginEmpresa" class="cadastro-form__input" placeholder="Login" required="required">
+                    <input type="text" name="SenhaEmpresa" class="cadastro-form__input" placeholder="Senha" required="required">
+                    <input type="text" name="NomeEmpresa" class="cadastro-form__input" placeholder="Nome do seu Restaurante" required="required">
+                    <input type="number" name="CNPJEmpresa" class="cadastro-form__input" placeholder="CNPJ do seu Restaurante(apenas números)" required="required">
+                    <input type="number" name="TelefoneEmpresa" class="cadastro-form__input" placeholder="(ddd)xxxxx-xxxx" required="required">
                 </form>
             </div>
         </section>

@@ -10,13 +10,15 @@
 <body>
 
     <h2>Dados dos Pedidos</h2>
-    <form method="post" action="..\PHP\inserirPedido.php">
+    <form method="post" action="..\PHP\inserir--pedido.php">
         <fieldset>
-            <legend>Cadastro cliente</legend>
-            <label>Nome do pedido: </label><br>
-            <input type="text" name="NomePedido" size="60" maxlength="255" placeholder="Nome completo"><br><br>
-            <label>Valor do pedido: </label><br>
+            <legend>Cadastro do Pedido</legend>
+            <label>Descricao:</label><br>
+            <input type="text" name="DescricaoPedido" size="60" maxlength="255" placeholder="Descricao"><br><br>
+            <label>Valor: </label><br>
             <input type="number" name="ValorPedido" placeholder="Ex.:25,00"><br><br>
+            <label>CPF do cliente:</label><br>
+            <input type="text" name="CPFCliente" size="14" maxlength="11" placeholder="CPF"><br>
             <input class="botao" type="submit" value="Enviar">
         </fieldset>
     </form>

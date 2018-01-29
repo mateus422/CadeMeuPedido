@@ -10,14 +10,18 @@
 <body>
 
     <h2>Dados do entregador</h2>
-    <form method="post" action="..\PHP\inserirEntregador.php">
+    <form method="post" action="..\PHP\inserir-entregador.php">
         <fieldset>
             <legend>Cadastro entregador</legend>
 
-            <label>Nome do entregador:</label><br>
+            <label>Nome Completo:</label><br>
             <input type="text" name="NomeEntregador" size="60" maxlength="255" placeholder="Nome completo"><br><br>
-            <label>Descricao do entregador:</label><br>
-            <input type="text" name="DescricaoEntregador" size="60" maxlength="255" placeholder="Fale sobre"><br><br>
+            <label>Telefone:</label><br>
+            <input type="text" name="TelefoneEntregador" size="14" maxlength="11" placeholder="(ddd)xxxxx-xxxx"><br><br>
+            <label>CPF:</label><br>
+            <input type="text" name="CPFEntregador" size="14" maxlength="11" placeholder="CPF"><br><br>
+            <label>CNPJ da empresa:</label><br>
+            <input type="number" name="CNPJEmpresa" class="cadastro-form__input" placeholder="CNPJ do seu Restaurante(apenas números)" required="required">
             <input class="botao" type="submit" value="Enviar">
         </fieldset>
     </form>

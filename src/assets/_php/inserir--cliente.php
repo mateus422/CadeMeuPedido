@@ -6,16 +6,21 @@ echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='st
 
     $link = DBconnect();
    
+$cpfCliente = $_POST['CPFCliente']; 
 $nomeCliente = $_POST['NomeCliente'];
-$numeroCliente = $_POST['NumeroCliente'];
+$telefoneCliente = $_POST['NumeroCliente'];
 $enderecoCliente = $_POST['EnderecoCliente'];
 $erro=false; 
-/*Falta ver o nome correto no banco de dados;*/ $table= "T_cliente";
+$table= "t_cliente";
+if (empty($cpfCliente)) {//Verifica se o valor foi preenchido e se é um numero
+    echo "Por favor preencha o cpf do cliente corretamente!<br>";
+    $erro=true;
+}
 if (empty($nomeCliente)){//Verifica se o nome do cliente está preenchido
     echo "Por favor preencha o nome do cliente corretamente!<br>";
     $erro=true;
 }    
-if (empty($numeroCliente)) {//Verifica se o numero do cliente está preenchido e se é um numero
+if (empty($telefoneCliente)) {//Verifica se o numero do cliente está preenchido e se é um numero
     echo "Por favor preencha o número do cliente corretamente!<br>";
     $erro=true;
 }
@@ -25,9 +30,10 @@ if (empty($enderecoCliente)) {//Verifica se o endereço está preenchido
 }
 if(!$erro){
     $dadosCliente = array (
-        /*Falta ver o nome correto no banco de dados;*/ 'nome' => "$nomeCliente",
-        /*Falta ver o nome correto no banco de dados;*/ 'numero' => "$numeroCliente",
-        /*Falta ver o nome correto no banco de dados;*/ 'endereço' => "$enderecoCliente"
+        'cli_cpf' => "$cpfCliente"
+        'cli_nomecompleto' => "$nomeCliente",
+        'cli_telefone' => "$telefoneCliente",
+        'cli_endereco' => "$enderecoCliente"
     );
     $gravar = DBCreate ($table, $dadosCliente);
     if($gravar){

@@ -107,7 +107,7 @@ CREATE TABLE `t_pedido` (
   `ped_status` boolean NOT NULL,
   `ped_descricao` varchar(255) NOT NULL,
   `ped_valor` float(5,2) NOT NULL,
-  `cli_cpf` int(11) DEFAULT NULL,
+  `e` int(11) DEFAULT NULL,
   `ent_cpf` int(11) DEFAULT NULL,
   PRIMARY KEY (`ped_codigo`),
   KEY `cli_cpf` (`cli_cpf`),

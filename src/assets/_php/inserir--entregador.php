@@ -6,23 +6,36 @@ echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='st
 
     $link = DBconnect();
 
+$cpfEntregador = $_POST["CPFEntregador"];
 $nomeEntregador = $_POST["NomeEntregador"];
-$descricaoEntregador = $_POST["DescricaoEntregador"];
+$telefoneEntregador = $_POST["TelefoneEntregador"];
+$cnpjEmpresa = $_POST['CNPJEmpresa']; 
 $erro=false;
 
-$table = "T_entregador";
+$table = "t_entregador";
+if (empty($cpfEntregador)) {//Verifica se a descrição está preenchida
+    echo "Por favor preencha o cpf do entregador corretamente!<br>";
+    $erro=true;
+}
 if (empty($nomeEntregador)){//Verifica se o nome está preenchido
     echo "Por favor preencha o nome do entregador corretamente!<br>";
     $erro=true;
-}    
-if (empty($descricaoEntregador)) {//Verifica se a descrição está preenchida
-    echo "Por favor preencha a descricao do entregador corretamente!<br>";
-    $erro=true;
 }
+if (empty($telefoneEntregador)) {//Verifica se a descrição está preenchida
+    echo "Por favor preencha o telefone do entregador corretamente!<br>";
+    $erro=true;
+}  
+if (empty($cnpjEmpresa)) {//Verifica se o valor foi preenchido e se é um numero
+    echo "Por favor preencha o CNPJ da empresa corretamente!<br>";
+    $erro=true;
+}  
 if(!$erro){
     $dadosEntregador= array(
-		'nome'=> "$nomeEntregador",
-		'descricao'=> "$descricaoEntregador"
+        'ent_cpf'=> "$cpfEntregador",
+        'ent_nomecompleto'=> "$nomeEntregador",
+		'ent_telefone'=> "$telefoneEntregador",
+        'emp_cnpj' => "$cnpjEmpresa"
+
 	);
     $gravar = DBCreate ($table, $dadosEntregador);
     if($gravar){
