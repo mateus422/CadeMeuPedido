@@ -1,8 +1,8 @@
 <?php
 echo"<!DOCTYPE html><html lang='pt-br'><head><meta charset='utf-8'><link rel='stylesheet' href='../HtmleCSS/cadastro.css' type='text/css'></head><body><div>";
-    require '..\PHP\config.php';
-    require '..\PHP\connection.php';
-    require '..\PHP\database.php';
+    require 'config.php';
+    require 'connection.php';
+    require 'database.php';
 
     $link = DBconnect();
 

@@ -27,13 +27,14 @@
     <main>
         <section class="cadastro">
             <div class="content">
-                <form class="cadastro-form" action="..\PHP\inserir-empresa.php" method="post">
+                <form class="cadastro-form" action="assets/_php/inserir--empresa.php" method="post">
                     <p class="cadastro-form__title">Cadastro do Restaurante</p>
                     <input type="text" name="LoginEmpresa" class="cadastro-form__input" placeholder="Login" required="required">
-                    <input type="text" name="SenhaEmpresa" class="cadastro-form__input" placeholder="Senha" required="required">
+                    <input type="password" name="SenhaEmpresa" class="cadastro-form__input" placeholder="Senha" required="required">
                     <input type="text" name="NomeEmpresa" class="cadastro-form__input" placeholder="Nome do seu Restaurante" required="required">
                     <input type="number" name="CNPJEmpresa" class="cadastro-form__input" placeholder="CNPJ do seu Restaurante(apenas números)" required="required">
                     <input type="number" name="TelefoneEmpresa" class="cadastro-form__input" placeholder="(ddd)xxxxx-xxxx" required="required">
+                    <input class="botao" type="submit" value="Enviar">
                 </form>
             </div>
         </section>

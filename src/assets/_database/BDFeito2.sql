@@ -30,7 +30,7 @@ CREATE TABLE `t_cliente` (
   `cli_nomecompleto` varchar(255) NOT NULL,
   `cli_telefone` decimal(11,0) NOT NULL,
   `cli_endereco` varchar(255) NOT NULL,
-  PRIMARY KEY (`cli_cpf`),
+  PRIMARY KEY (`cli_cpf`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -56,7 +56,7 @@ CREATE TABLE `t_empresa` (
   `emp_login` varchar(16) NOT NULL,
   `emp_senha` varchar(16) NOT NULL,
   `emp_telefone` decimal(11,0),
-  PRIMARY KEY (`emp_cnpj`),
+  PRIMARY KEY (`emp_cnpj`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -80,6 +80,7 @@ CREATE TABLE `t_entregador` (
   `ent_cpf` int(11) NOT NULL,
   `ent_nomecompleto` varchar(255) NOT NULL,
   `ent_telefone` decimal(11,0) NOT NULL,
+  `emp_cnpj` int(14) NOT NULL,
   PRIMARY KEY (`ent_cpf`),
   KEY `emp_cnpj` (`emp_cnpj`),
   CONSTRAINT `t_entregador_ibfk_1` FOREIGN KEY (`emp_cnpj`) REFERENCES `t_empresa` (`emp_cnpj`)
@@ -107,7 +108,7 @@ CREATE TABLE `t_pedido` (
   `ped_status` boolean NOT NULL,
   `ped_descricao` varchar(255) NOT NULL,
   `ped_valor` float(5,2) NOT NULL,
-  `e` int(11) DEFAULT NULL,
+  `cli_cpf` int(11) NOT NULL,
   `ent_cpf` int(11) DEFAULT NULL,
   PRIMARY KEY (`ped_codigo`),
   KEY `cli_cpf` (`cli_cpf`),

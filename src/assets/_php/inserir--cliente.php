@@ -30,7 +30,7 @@ if (empty($enderecoCliente)) {//Verifica se o endereço está preenchido
 }
 if(!$erro){
     $dadosCliente = array (
-        'cli_cpf' => "$cpfCliente"
+        'cli_cpf' => "$cpfCliente",
         'cli_nomecompleto' => "$nomeCliente",
         'cli_telefone' => "$telefoneCliente",
         'cli_endereco' => "$enderecoCliente"
