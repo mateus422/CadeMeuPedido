@@ -1,16 +1,37 @@
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
-    <title>Update de dados</title>
-    <link rel="stylesheet" href="../../HtmleCSS/cadastro.css">
-    <link rel="stylesheet" href="../../HtmleCSS/tabela.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadê meu pedido ?</title>
+    <link rel="stylesheet" href="../../_css/pags/cadastro--empr.css">
+    <link rel="stylesheet" href="../../_css/base.css">
+    <link rel="stylesheet" href="../../_css/pags/inputs.css">
 </head>
 
 <body>
+    <header class="header-main">
+        <div class="content">
+            <img class="logo" src="../../_images/logo.png" width="160px">
+            <nav class="nav-main">
+                <ul>
+                    <li>
+                        <a>Quem somos</a>
+                    </li>
+                </ul>
+            </nav>
+            <a class="header__btn" role="button" href="../../../functions--choice.html">Funções do sistema</a>
+        </div>
+    </header>
 
+    <main>
 
-    <?php
+				
+        <section class="cadastro">
+            <div class="content">
+            <?php
     require '..\config.php';
     require '..\connection.php';
     require '..\database.php';
@@ -61,7 +82,7 @@
         <br>
 
         <form method="get" action="#">
-            <fieldset>
+            <fieldset style = "width: 20%; margin: 100px auto;">
                 <legend>Modifique clientes aqui</legend>
                 <label>CPF do cliente a ser modificado: </label>
                 <br>
@@ -106,8 +127,9 @@
         
        DBClose($link); 
         ?>
-
-
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
