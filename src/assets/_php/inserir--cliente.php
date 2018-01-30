@@ -42,7 +42,7 @@ if(!$erro){
         echo "Erro na inserção de dados!<br>";
     }
 } else{
-    echo "<button class='button' onClick=location.href='../HtmleCSS/cadastrarCliente.html'><span>Voltar ao início</span></button></div></body></html>";
+    echo "<button class='button' onClick=location.href='../../cadastro--cliente.html'><span>Voltar ao início</span></button></div></body></html>";
 }
 DBClose($link);
 ?>

@@ -26,7 +26,7 @@ create Database cade_meu_pedido;
   use cade_meu_pedido;
 
 CREATE TABLE `t_cliente` (
-  `cli_cpf` int(11) NOT NULL,
+  `cli_cpf` varchar(11) NOT NULL,
   `cli_nomecompleto` varchar(255) NOT NULL,
   `cli_telefone` decimal(11,0) NOT NULL,
   `cli_endereco` varchar(255) NOT NULL,
@@ -77,7 +77,7 @@ DROP TABLE IF EXISTS `t_entregador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_entregador` (
-  `ent_cpf` int(11) NOT NULL,
+  `ent_cpf` varchar(11) NOT NULL,
   `ent_nomecompleto` varchar(255) NOT NULL,
   `ent_telefone` decimal(11,0) NOT NULL,
   `emp_cnpj` int(14) NOT NULL,
@@ -105,16 +105,16 @@ DROP TABLE IF EXISTS `t_pedido`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_pedido` (
   `ped_codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `ped_status` boolean NOT NULL,
+  `ped_status` boolean NOT NULL DEFAULT TRUE,
   `ped_descricao` varchar(255) NOT NULL,
   `ped_valor` float(5,2) NOT NULL,
-  `cli_cpf` int(11) NOT NULL,
-  `ent_cpf` int(11) DEFAULT NULL,
+  `cli_cpf` varchar(11) NOT NULL,
+  `ent_cpf` varchar(11) DEFAULT NULL,
   PRIMARY KEY (`ped_codigo`),
   KEY `cli_cpf` (`cli_cpf`),
   KEY `ent_cpf` (`ent_cpf`),
-  CONSTRAINT `t_pedido_ibfk_1` FOREIGN KEY (`cli_cpf`) REFERENCES `t_cliente` (`cli_cpf`),
-  CONSTRAINT `t_pedido_ibfk_2` FOREIGN KEY (`ent_cpf`) REFERENCES `t_entregador` (`ent_cpf`)
+  CONSTRAINT `t_pedido_ibfk_1` FOREIGN KEY (`cli_cpf`) REFERENCES `t_cliente` (`cli_cpf`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `t_pedido_ibfk_2` FOREIGN KEY (`ent_cpf`) REFERENCES `t_entregador` (`ent_cpf`)  ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
