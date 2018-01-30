@@ -18,7 +18,7 @@
             <nav class="nav-main">
                 <ul>
                     <li>
-                        <a>Quem somos</a>
+                        <li><a href="../../../quemsomos.html">Quem somos</a></li> 
                     </li>
                 </ul>
             </nav>

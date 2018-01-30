@@ -17,8 +17,7 @@
         <nav class="nav-main">
           <ul>
             <li>
-              <a>Quem somos
-              </a>
+              <a class="header__btn" role="button" href="../../../functions--choice.html">Funções do sistema</a>
             </li>
           </ul>
         </nav>
