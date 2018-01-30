@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadê meu pedido ?</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/_css/pags/index.css">
+    <link rel="stylesheet" href="assets/_css/base.css">
+    <script type="text/javascript" src="assets/_javascript/main.js"></script>
+</head>
+<body>
+    <header class="header-main">
+        <div class="content">
+                <img class="logo" src="assets/_images/logo.png" width="160px">
+            <nav class="nav-main">
+                <ul>
+                    <li><a>Quem somos</a></li> 
+                    <li><a href="cadastro--empr.html">Cadastre seu restaurante</a></li>
+                    <li><a href="index.html">Veja aonde está seu pedido</a></li>
+                </ul>
+            </nav>
+            <a class="header__btn" role="button"   href="functions--choice.html">entrar</a>
+        </div>
+    </header>
+    <main>
+        <section class="presentation">
+                <img src="assets/_images/logo.png">
+                <a class="presentation__btn" role="button" onclick="showPedido()" href="#">Pesquise código do pedido</a>
+                <div id="divHidden" class="hidden">
+                    <form action="assets/_php/pesquisar--pedido.php" method="get">
+                        <input class="hidden__pedido" name="codigo" type="number" maxlength="11" size="14" placeholder="Apenas números">
+                        <input class="hidden__btn" type="submit" value="pesquisar">
+                    </form>
+                </div> 
+        </section>
+    </main>
+</body>
+</html>
