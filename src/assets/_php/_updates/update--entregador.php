@@ -109,9 +109,9 @@ $dadosNEntregador= array(
 );
 $update = DBUpdate($table,$dadosNEntregador,"ent_cpf = $CpfEntregador");
 if($update){
-echo "Dados modificados com sucesso!";
+echo"<script language='javascript' type='text/javascript'>alert('Dados modificados com sucesso!');</script>";
 }else{
-echo "Tivemos problemas em modificar os dados";
+echo"<script language='javascript' type='text/javascript'>alert('Tivemos problemas em modificar os dados');</script>";
 }
 DBClose($link); 
 ?>

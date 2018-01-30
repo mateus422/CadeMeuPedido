@@ -100,9 +100,9 @@
 					$delete = DBDelete('t_cliente', "cli_cpf = $cpfCliente");
 	 
 					if($delete)
-						echo "Deletado com Sucesso";
+						echo"<script language='javascript' type='text/javascript'>alert('Deletado com sucesso!');</script>";
 					else
-						   echo "Falha ao Deletar";
+						   echo"<script language='javascript' type='text/javascript'>alert('Falha ao Deletar');</script>";
 	
 	
 					   DBClose($link); 
