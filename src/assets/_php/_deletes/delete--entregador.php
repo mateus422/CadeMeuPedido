@@ -24,44 +24,47 @@
     echo "<h2>Lista de entregadores:</h2><br><br>";
     foreach($teste as $key){
         $cont++;
-        $entregadores[$cont] = $key['cod_entregador']; 
-        $nomes[$cont] = $key['nome']; 
-        $descricao[$cont] = $key['descricao'];
-
+        $cpfEntr[$cont] = $key['ent_cpf']; 
+        $nomeEntr[$cont] = $key['ent_nomecompleto']; 
+        $telefoneEntr[$cont] = $key['ent_telefone'];
+        $cnpjEntr[$cont] = $key['emp_cnpj'];
 }
     
 ?>
+    <table>
+        <tr class="topo">
+            <th>CPF do entregador</th>
+            <th>Nome do entregador</th>
+            <th>Telefone do entregador</th>
+            <th>Cnpj da Empresa</th>
+        </tr>
+        <?php for($i = 1; $i <= $cont; $i++){ ?>
+        <tr>
+            <td>
+                <?php echo  $cpfEntr[$i]; ?>
+            </td>
+            <td>
+                <?php echo  $nomeEntr[$i]; ?>
+            </td>
+            <td>
+                <?php echo  $telefoneEntr[$i]; ?>
+            </td>
+            <td>
+                <?php echo  $cnpjEntr[$i]; ?>
+            </td>
+        </tr>
+        <?php } ?>
+    </table>
 
-        <table>
-            <tr class="topo">
-                <th>ID do entregador</th>
-                <th>Nome do entregador</th>
-                <th>Descrição do entregador</th>
-            </tr>
-            <?php for($i = 1; $i <= $cont; $i++){ ?>
-            <tr>
-                <td>
-                    <?php echo  $entregadores[$i]; ?>
-                </td>
-                <td>
-                    <?php echo  $nomes[$i]; ?>
-                </td>
-                <td>
-                    <?php echo  $descricao[$i]; ?>
-                </td>
-            </tr>
-            <?php } ?>
-        </table>
-
-        <br>
-        <br>
-        <br>
+    <br>
+    <br>
+    <br>
         
         <form method="get" action="#">
             <fieldset>
                 <legend>Delete entregadores aqui</legend>
                 <label>ID do entregador a ser deletado:
-                    <input type="number" name="CodEntregador">
+                    <input type="number" name="CpfEntregador">
                 </label>
                 <br>
                 <br>
@@ -71,9 +74,9 @@
 
         <?php 
 
-      			@$codEntregador = $_GET['CodEntregador'];
+      			@$cpfEntregador = $_GET['CpfEntregador'];
       			  
-        		$delete = DBDelete('T_entregador', "cod_entregador = $codEntregador");
+        		$delete = DBDelete('T_entregador', "ent_cpf = $cpfEntregador");
  
         		if($delete)
         			echo "Deletado com Sucesso";

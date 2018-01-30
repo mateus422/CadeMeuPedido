@@ -113,8 +113,8 @@ CREATE TABLE `t_pedido` (
   PRIMARY KEY (`ped_codigo`),
   KEY `cli_cpf` (`cli_cpf`),
   KEY `ent_cpf` (`ent_cpf`),
-  CONSTRAINT `t_pedido_ibfk_1` FOREIGN KEY (`cli_cpf`) REFERENCES `t_cliente` (`cli_cpf`),
-  CONSTRAINT `t_pedido_ibfk_2` FOREIGN KEY (`ent_cpf`) REFERENCES `t_entregador` (`ent_cpf`)
+  CONSTRAINT `t_pedido_ibfk_1` FOREIGN KEY (`cli_cpf`) REFERENCES `t_cliente` (`cli_cpf`)  ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `t_pedido_ibfk_2` FOREIGN KEY (`ent_cpf`) REFERENCES `t_entregador` (`ent_cpf`)  ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
