@@ -19,31 +19,29 @@
         
     //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
     $teste = DBRead('T_cliente');
-    $table= "T_cliente";
+    $table= "t_cliente";
     $cont = 0;
         echo "<h2>Lista de clientes:</h2><br><br>";
         foreach($teste as $key){
             $cont++;
-            $clientes[$cont] = $key['cod_cliente']; 
-            $nomes[$cont] = $key['nome']; 
-            $numeros[$cont] = $key['numero']; 
-            $enderecos[$cont] = $key['endereço']; 
-            $codPedido[$cont] = $key['cod_pedido']; 
+            $cpf[$cont] = $key['cli_cpf']; 
+            $nomes[$cont] = $key['cli_nomecompleto']; 
+            $numeros[$cont] = $key['cli_telefone']; 
+            $enderecos[$cont] = $key['cli_endereco']; 
    }
         
 ?>
         <table>
             <tr class="topo">
-                <th>ID do cliente</th>
+                <th>CPF do cliente</th>
                 <th>Nome do cliente</th>
-                <th>Numero do cliente</th>
+                <th>Telefone do cliente</th>
                 <th>Endereço do cliente</th>
-                <th>Código do pedido</th>
             </tr>
             <?php for($i = 1; $i <= $cont; $i++){ ?>
             <tr>
                 <td>
-                    <?php echo  $clientes[$i]; ?>
+                    <?php echo  $cpf[$i]; ?>
                 </td>
                 <td>
                     <?php echo  $nomes[$i]; ?>
@@ -53,9 +51,6 @@
                 </td>
                 <td>
                     <?php echo  $enderecos[$i]; ?>
-                </td>
-                <td>
-                    <?php echo  $codPedido[$i]; ?>
                 </td>
             </tr>
             <?php } ?>
@@ -68,9 +63,9 @@
         <form method="get" action="#">
             <fieldset>
                 <legend>Modifique clientes aqui</legend>
-                <label>ID do cliente a ser modificado: </label>
+                <label>CPF do cliente a ser modificado: </label>
                 <br>
-                <input type="number" name="CodCliente">
+                <input type="number" name="cpfCliente">
                 <br>
                 <label>Novo nome do cliente: </label>
                 <br>
@@ -89,19 +84,20 @@
         </form>
 
         <?php 
-      @$codCliente = $_GET['CodCliente'];
+      @$cpfCliente = $_GET['cpfCliente'];
       @$nnomeCliente = $_GET['NNomeCliente'];
       @$nnumeroCliente = $_GET['NNumeroCliente'];
       @$nenderecoCliente = $_GET['NEnderecoCliente'];   
         
         
         $dadosNCliente = array (
-        /*Falta ver o nome correto no banco de dados;*/ 'nome' => "$nnomeCliente",
-        /*Falta ver o nome correto no banco de dados;*/ 'numero' => "$nnumeroCliente",
-        /*Falta ver o nome correto no banco de dados;*/ 'endereço' => "$nenderecoCliente"
+        'cli_cpf' => "$cpfCliente",
+        'cli_nomecompleto' => "$nnomeCliente",
+         'cli_telefone' => "$nnumeroCliente",
+         'cli_endereco' => "$nenderecoCliente"
         );
         
-        $update = DBUpdate($table,$dadosNCliente,"cod_cliente = $codCliente");
+        $update = DBUpdate($table,$dadosNCliente,"cli_cpf = $cpfCliente");
             if($update){
                 echo "Dados modificados com sucesso!";
             }else{

@@ -25,22 +25,23 @@
         echo "<h2>Lista de pedidos:</h2><br><br>";
         foreach($teste as $key){
             $cont++;
-            $pedidos[$cont] = $key['cod_pedido']; 
-            $nomes[$cont] = $key['nome_pedido']; 
-            $valor[$cont] = $key['valor_pedido']; 
-            $codCliente[$cont] = $key['cod_cliente']; 
-            $codEntregador[$cont] = $key['cod_entregador']; 
-             
+            $pedidos[$cont] = $key['ped_codigo']; 
+            $statusPed[$cont] = $key['ped_status']; 
+            $descricaoPed[$cont] = $key['ped_descricao']; 
+            $valorPed[$cont] = $key['ped_valor']; 
+            $cpfClientePed[$cont] = $key['cli_cpf']; 
+            $codEntrEntregador[$cont] = $key['ent_cpf'];  
    }
         
 ?>
         <table>
             <tr class="topo">
                 <th>ID do pedido</th>
-                    <th>Nome do pedido</th>
-                    <th>Valor do pedido</th>
-                    <th>Código do cliente</th>
-                    <th>Código do entregador</th>
+                <th>Status do pedido</th>
+                <th>Descrição do pedido</th>
+                <th>Valor do pedido</th>
+                <th>CPF do cliente</th>
+                <th>CPF do entregador</th>
             </tr>
             <?php for($i = 1; $i <= $cont; $i++){ ?>
             <tr>
@@ -48,16 +49,19 @@
                     <?php echo  $pedidos[$i]; ?>
                 </td>
                 <td>
-                    <?php echo  $nomes[$i]; ?>
+                    <?php echo  $statusPed[$i]; ?>
                 </td>
                 <td>
-                    <?php echo  $valor[$i]; ?>
+                    <?php echo  $descricaoPed[$i]; ?>
                 </td>
                 <td>
-                    <?php echo  $codCliente[$i]; ?>
+                    <?php echo  $valorPed[$i]; ?>
                 </td>
                 <td>
-                    <?php echo  $codEntregador[$i]; ?>
+                    <?php echo  $cpfClientePed[$i]; ?>
+                </td>
+                <td>
+                    <?php echo  $codEntrEntregador[$i]; ?>
                 </td>
             </tr>
             <?php } ?>
@@ -74,9 +78,16 @@
                 <br>
                 <input type="number" name="CodPedido">
                 <br>
-                <label>Novo nome do pedido: </label>
+                <label>Novo status do pedido: </label>
                 <br>
-                <input type="text" name="NNomePedido">
+                <select name="NStatusPedido">
+                    <option value = 1>em andamento</option>
+                    <option value = 0>fechado</option>
+                </select>
+                <br>
+                <label>Nova descrição do pedido:</label>
+                <br>
+                <input type="text" name="NDescricaoPedido">
                 <br>
                 <label>Novo valor do pedido:</label>
                 <br>
@@ -87,18 +98,20 @@
         </form>
         <?php
         
-@$nnomePedido = $_GET['NNomePedido']; 
+@$nstatusPedido = $_GET['NStatusPedido'];
+@$ndescricaoPedido = $_GET['NDescricaoPedido']; 
 @$nvalorPedido = $_GET['NValorPedido'];
 
 @$codPedido = $_GET['CodPedido'];
         
 $dadosNPedido = array (
         
-        'nome_pedido' => "$nnomePedido",
-        'valor_pedido' => "$nvalorPedido"
+        'ped_status' => "$nstatusPedido",
+        'ped_descricao' => "$ndescricaoPedido",
+        'ped_valor' => "$nvalorPedido"
         );
         
-          $update = DBUpdate($table,$dadosNPedido,"cod_pedido = $codPedido");
+          $update = DBUpdate($table,$dadosNPedido,"ped_codigo = $codPedido");
             if($update){
                 echo "Dados modificados com sucesso!";
             }else{

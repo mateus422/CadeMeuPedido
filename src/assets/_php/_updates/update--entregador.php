@@ -19,35 +19,40 @@
     
         
      //Teoricamente vai imprimir uma tabela com as opções de Update e Delete
-    $teste = DBRead('T_entregador');
-    $table= "T_entregador";
+    $teste = DBRead('t_entregador');
+    $table= "t_entregador";
     $cont = 0;
         
         echo "<h2>Lista de entregadores:</h2><br><br>";
         foreach($teste as $key){
             $cont++;
-            $entregadores[$cont] = $key['cod_entregador']; 
-            $nomes[$cont] = $key['nome']; 
-            $descricao[$cont] = $key['descricao'];
+            $cpfEntr[$cont] = $key['ent_cpf']; 
+            $nomeEntr[$cont] = $key['ent_nomecompleto']; 
+            $telefoneEntr[$cont] = $key['ent_telefone'];
+            $cnpjEntr[$cont] = $key['emp_cnpj'];
    }
         
 ?>
         <table>
             <tr class="topo">
-                <th>ID do entregador</th>
+                <th>CPF do entregador</th>
                 <th>Nome do entregador</th>
-                <th>Descrição do entregador</th>
+                <th>Telefone do entregador</th>
+                <th>Cnpj da Empresa</th>
             </tr>
             <?php for($i = 1; $i <= $cont; $i++){ ?>
             <tr>
                 <td>
-                    <?php echo  $entregadores[$i]; ?>
+                    <?php echo  $cpfEntr[$i]; ?>
                 </td>
                 <td>
-                    <?php echo  $nomes[$i]; ?>
+                    <?php echo  $nomeEntr[$i]; ?>
                 </td>
                 <td>
-                    <?php echo  $descricao[$i]; ?>
+                    <?php echo  $telefoneEntr[$i]; ?>
+                </td>
+                <td>
+                    <?php echo  $cnpjEntr[$i]; ?>
                 </td>
             </tr>
             <?php } ?>
@@ -60,17 +65,17 @@
         <form method="get" action="#">
             <fieldset>
                 <legend>Modifique entregadores aqui</legend>
-                <label>ID do entregador a ser modificado: </label>
+                <label>CPF do entregador a ser modificado: </label>
                 <br>
-                <input type="number" name="CodEntregador ">
+                <input type="number" name="CpfEntregador">
                 <br>
                 <label>Novo nome do entregador: </label>
                 <br>
                 <input type="text" name="NNomeEntregador">
                 <br>
-                <label>Nova Descrição do entregador: </label>
+                <label>Novo telefone do entregador: </label>
                 <br>
-                <input type="text" name="NDescricaoEntregador">
+                <input type="text" name="NTelefoneEntregador">
                 <br>
                 <input class="botao" type="submit" value="Modificar">
             </fieldset>
@@ -78,16 +83,16 @@
 
         <?php
 @$nnomeEntregador = $_GET["NNomeEntregador"];
-@$ndescricaoEntregador = $_GET["NDescricaoEntregador"];
+@$ntelefoneEntregador = $_GET["NTelefoneEntregador"];
 
-@$codEntregador = $_GET["CodEntregador"];
+@$CpfEntregador = $_GET["CpfEntregador"];
         
 $dadosNEntregador= array(
-'nome' => "$nnomeEntregador",
-'descricao' => "$ndescricaoEntregador"
+'ent_nomecompleto' => "$nnomeEntregador",
+'ent_telefone' => "$ntelefoneEntregador"
 );
         
-        $update = DBUpdate($table,$dadosNEntregador,"cod_entregador = $codEntregador");
+        $update = DBUpdate($table,$dadosNEntregador,"ent_cpf = $CpfEntregador");
             if($update){
                 echo "Dados modificados com sucesso!";
             }else{

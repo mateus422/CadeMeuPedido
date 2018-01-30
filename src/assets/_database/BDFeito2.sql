@@ -26,7 +26,7 @@ create Database cade_meu_pedido;
   use cade_meu_pedido;
 
 CREATE TABLE `t_cliente` (
-  `cli_cpf` int(11) NOT NULL,
+  `cli_cpf` varchar(11) NOT NULL,
   `cli_nomecompleto` varchar(255) NOT NULL,
   `cli_telefone` decimal(11,0) NOT NULL,
   `cli_endereco` varchar(255) NOT NULL,
@@ -105,10 +105,10 @@ DROP TABLE IF EXISTS `t_pedido`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `t_pedido` (
   `ped_codigo` int(11) NOT NULL AUTO_INCREMENT,
-  `ped_status` boolean NOT NULL,
+  `ped_status` boolean NOT NULL DEFAULT TRUE,
   `ped_descricao` varchar(255) NOT NULL,
   `ped_valor` float(5,2) NOT NULL,
-  `cli_cpf` int(11) NOT NULL,
+  `cli_cpf` varchar(11) NOT NULL,
   `ent_cpf` int(11) DEFAULT NULL,
   PRIMARY KEY (`ped_codigo`),
   KEY `cli_cpf` (`cli_cpf`),
